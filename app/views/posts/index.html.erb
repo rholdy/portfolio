@@ -1,0 +1,21 @@
+<h1>These are my posts</h1>
+
+<div class= 'jumbotron' >
+
+<% @posts.each do |post| %>
+  
+  
+    <%= post.title %></br>
+    <%= post.body %></br>
+    <%= post.Author %></br>
+
+ </div>   
+  
+    <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-primary btn-lg" %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-lg" %>
+    <%= link_to 'New Post', new_post_path, :class => "btn btn-primary btn-lg" %>
+
+<% end %>
+
+
+

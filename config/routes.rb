@@ -1,4 +1,7 @@
 Portfolio::Application.routes.draw do
+  resources :posts
+
+
   devise_for :authors
 
   root :to => "static_pages#home"
@@ -8,6 +11,7 @@ Portfolio::Application.routes.draw do
   get "home", to:  "static_pages#home", as: :home
   get "about", to:  "static_pages#about", as: :about
   get "contact", to:  "static_pages#contact", as: :contact
+  get "posts", to: "posts#show", as: :posts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
