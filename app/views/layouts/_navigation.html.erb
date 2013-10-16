@@ -7,15 +7,38 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to "Portfolio", root_path, class: "navbar-brand" %>
+    
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  
+  <div>
     <ul class="nav navbar-nav">
+      <li><%= link_to "Portfolio", root_path, class: "navbar-brand" %></li>
       <li><%= link_to t(:about), about_path %></li>
       <li><%= link_to t(:contact), contact_path %></li>
       <li><%= link_to t(:posts), posts_path %></li>
     </ul>
-    </div><!-- /.navbar-collapse -->
+    <ul class="nav navbar-nav navbar-right">
+      <li> <%= mail_to "rholdy@gmail.com", ' ', :class => "icon-envelope" %> </li>
+      <li> <%= link_to " ", "https://github.com/rholdy", :class => "icon-github" %> </li>
+      <li> <%= link_to " ", "https://twitter.com/ryan_holdaway", :class => "icon-twitter" %> </li>
+      <li> <%= link_to " ", "http://www.linkedin.com/pub/ryan-holdaway/79/9a3/116", :class => "icon-linkedin" %> </li>
+      <li> <%= link_to " ", "https://plus.google.com/104574162680723731489/posts", :class => "icon-google-plus" %> </li>
+      <li> <%= link_to " ", "https://www.facebook.com/rholdy", :class => "icon-facebook" %>  </li>
+      <li> <%= link_to " ", "http://www.quora.com/Ryan-Holdaway", :class => "icon-flag" %> </li>
+      <% if author_signed_in? %>
+        <li> <p class='navbar-text'> Signed in as <%= current_author.email %></p> </li>
+        <li><%= link_to "Sign Out", destroy_author_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_author_registration_path %></li> 
+        <li><%= link_to "Sign In", new_author_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </nav>
+
+<div class='container text-center'>
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="footer">
+  <p>&copy; <%= Time.now.year %> Built by Ryan Holdaway using Ruby on Rails. All rights reserved </p>
+  </nav>
+</div>

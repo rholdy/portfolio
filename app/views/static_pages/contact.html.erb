@@ -1,14 +1,15 @@
 <div class="jumbotron">
   <div class="container">
-    <h1>Welcome!</h1>
-    <p>This is my Contact Page</p>
+    <h1>All My Links</h1>
+    <p>Why don't you drop me a line?</p>
     <p>
-      <a class="btn btn-primary btn-lg">Email Me</a>
-      <a class="btn btn-primary btn-lg">GitHub</a>
-      <a class="btn btn-primary btn-lg">Twitter</a>
-      <a class="btn btn-primary btn-lg">LinkedIn</a>
-      <a class="btn btn-primary btn-lg">Google+</a>
-      <a class="btn btn-primary btn-lg">Facebook</a>
+      <%= mail_to "rholdy@gmail.com", 'Email Me', :class => "btn btn-primary btn-lg" %>
+      <%= link_to "GitHub", "https://github.com/rholdy", :class => "btn btn-primary btn-lg" %> 
+      <%= link_to "Twitter", "https://twitter.com/ryan_holdaway", :class => "btn btn-primary btn-lg" %> 
+      <%= link_to "LinkedIn", "http://www.linkedin.com/pub/ryan-holdaway/79/9a3/116", :class => "btn btn-primary btn-lg" %> 
+      <%= link_to "Google+", "https://plus.google.com/104574162680723731489/posts", :class => "btn btn-primary btn-lg" %> 
+      <%= link_to "Facebook", "https://www.facebook.com/rholdy", :class => "btn btn-primary btn-lg" %> 
+      <%= link_to "Quora", "http://www.quora.com/Ryan-Holdaway", :class => "btn btn-primary btn-lg" %>
     </p>
 
     
@@ -17,3 +18,6 @@
 
 
 
+
+
+ 
