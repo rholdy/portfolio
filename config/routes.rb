@@ -1,4 +1,6 @@
 Portfolio::Application.routes.draw do
+  devise_for :authors
+
   root :to => "static_pages#home"
 
   get "path", to: 'controller#action', as: :name_of_path
