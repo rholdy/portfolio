@@ -18,6 +18,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'xray-rails'
+  gem 'letter_opener'
 end
 
 
