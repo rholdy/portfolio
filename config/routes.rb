@@ -1,4 +1,5 @@
 Portfolio::Application.routes.draw do
+
   resources :posts
 
 
@@ -12,6 +13,10 @@ Portfolio::Application.routes.draw do
   get "about", to:  "static_pages#about", as: :about
   get "contact", to:  "static_pages#contact", as: :contact
   get "posts", to: "posts#show", as: :posts
+
+
+  get "contact_me", to: 'contact_me#new', as: :contact_me
+  post "contact_me", to: 'contact_me#create', as: :contact_me
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
