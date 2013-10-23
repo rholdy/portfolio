@@ -1,5 +1,5 @@
 class ContactMeMailer < ActionMailer::Base
-  
+  layout 'email'
 
   def contact_me(message)
     @contact_me = message
