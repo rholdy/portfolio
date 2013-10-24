@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/blowmage/minitest-rails.git
+  revision: cc52a6d28073d81466d32d313c15ec3dd6de0ccb
+  specs:
+    minitest-rails (0.9.2.20130623200248)
+      minitest (~> 4.7)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: 0e88056ac5d58fb0bbd23d3fe929eac01712d964
   branch: 3
@@ -64,6 +72,12 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    ffaker (1.20.0)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -87,6 +101,7 @@ GEM
       railties
     method_source (0.8.2)
     mime-types (1.25)
+    minitest (4.7.5)
     multi_json (1.8.1)
     orm_adapter (0.4.0)
     pg (0.17.0)
@@ -166,10 +181,13 @@ DEPENDENCIES
   bootstrap-sass!
   coffee-rails (~> 3.2.1)
   devise
+  factory_girl_rails (>= 4.2.0)
+  ffaker
   figaro
   jquery-rails
   letter_opener
   meta_request
+  minitest-rails!
   pg
   powder
   pry-rails

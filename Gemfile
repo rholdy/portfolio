@@ -21,6 +21,12 @@ group :development do
   gem 'letter_opener'
 end
 
+group :development, :test do
+  gem 'minitest-rails', github: 'blowmage/minitest-rails'
+  gem 'factory_girl_rails', ">= 4.2.0"
+  gem 'ffaker'
+end
+
 
 
 # Gems used only for assets and not required
