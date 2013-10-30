@@ -9,6 +9,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'devise'
 gem 'figaro'
+gem "paperclip", "~> 3.0"
 
 
 group :development do

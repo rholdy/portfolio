@@ -1,15 +1,15 @@
-<h1>These are my posts</h1>
+<h1 class= "page-title">This is my blog</h1>
 
-<div class= 'jumbotron' >
+<div class= 'post'>
 
 <% @posts.each do |post| %>
   
   
-    <%= post.title %></br>
-    <%= post.body %></br>
-    <%= post.Author %></br>
+    <h3 class= 'post-title'><%= post.title %></br></h3>
+    <p class= 'post-body'><%= post.body %></br><p>
+    <%= post.Author %></br></br>
 
- </div>   
+  
   
     <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-primary btn-lg" %>
     <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-lg" %>
@@ -17,5 +17,5 @@
 
 <% end %>
 
-
+ </div> 
 

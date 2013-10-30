@@ -1,0 +1,9 @@
+Paperclip Gem
+
+install imagemagick
+
+rails g paperclip author avatar
+
+attributes accessible: avatar
+has_attached_file in the model
+
