@@ -80,4 +80,20 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def new_image
+    @post = Post.find(params[:post_id])
+    @picture = @post.pictures.new(params[:picture])
+  end
+
+  def create_image
+    @post = Post.find(params[:post_id])
+    @picture = @post.pictures.new(params[:picture])
+    if @picture.save
+      redirect_to post_path(@post), notice: "Well Done. Picture has been uploaded"
+    else
+      flash.now.alert = 'Image could not be saved. See errors and try again.'
+      render :new_picture
+    end
+  end
 end

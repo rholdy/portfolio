@@ -1,3 +1,7 @@
 class Post < ActiveRecord::Base
-  attr_accessible :Author, :body, :title
+
+  has_many :pictures, as: :pictured
+  attr_accessible :Author, :body, :title, :image, :picture, :description
+  
+
 end

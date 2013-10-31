@@ -1,0 +1,7 @@
+<%= simple_form_for @picture, url: create_image_path(@post) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :image, required: true %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+<% end %>

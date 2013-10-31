@@ -1,21 +1,27 @@
 <h1 class= "page-title">This is my blog</h1>
 
-<div class= 'post'>
+<div>
 
-<% @posts.each do |post| %>
-  
-  
+  <% @posts.each do |post| %>
+    
+    <div class= 'post' >
     <h3 class= 'post-title'><%= post.title %></br></h3>
     <p class= 'post-body'><%= post.body %></br><p>
-    <%= post.Author %></br></br>
 
-  
-  
+    <%= image_tag post.pictures.first.image.url(:medium) unless post.pictures.empty? %>
+
+    <%= post.Author %></br></br>
+    
+    </div>
     <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-primary btn-lg" %>
     <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-lg" %>
+    <%= link_to "New Image", new_image_path(post_id: post.id) %>
+    <% end %></br></br>
+    
+
     <%= link_to 'New Post', new_post_path, :class => "btn btn-primary btn-lg" %>
+    
 
-<% end %>
-
- </div> 
+    
+</div> 
 

@@ -1,22 +1,26 @@
 Portfolio::Application.routes.draw do
 
   resources :posts
+  get '/posts/:post_id/pictures/new', to: 'posts#new_image', as: :new_image
+  post '/posts/:post_id/pictures/new', to: 'posts#create_image', as: :create_image
+  # resources :posts do
 
-
+  #   get 'pictures/new', to: 'posts#new_image', as: :new_image
+  #   post 'pictures/new', to: 'posts#create_image', as: :create_image
+  # end
   devise_for :authors
 
   root :to => "static_pages#home"
 
   get "path", to: 'controller#action', as: :name_of_path
-
   get "home", to:  "static_pages#home", as: :home
   get "about", to:  "static_pages#about", as: :about
   get "contact", to:  "static_pages#contact", as: :contact
   get "posts", to: "posts#show", as: :posts
-
-
   get "contact_me", to: 'contact_me#new', as: :contact_me
   post "contact_me", to: 'contact_me#create', as: :contact_me
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

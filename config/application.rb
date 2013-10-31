@@ -60,5 +60,7 @@ module Portfolio
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+    config.paperclip_defaults = { default_url: "assets/:attachment/default/:style.png" }
+    
   end
 end

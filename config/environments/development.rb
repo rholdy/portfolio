@@ -35,6 +35,8 @@ Portfolio::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  Paperclip.options[:command_path] = '/usr/local/bin/convert'
+
   config.action_mailer.delivery_method = :smtp #:letter_opener 
     config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',

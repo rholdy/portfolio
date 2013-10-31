@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131018000759) do
+ActiveRecord::Schema.define(:version => 20131030213958) do
 
   create_table "authors", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -38,6 +38,21 @@ ActiveRecord::Schema.define(:version => 20131018000759) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "pictures", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "pictured_id"
+    t.string   "pictured_type"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "pictures", ["pictured_id"], :name => "index_pictures_on_pictured_id"
 
   create_table "posts", :force => true do |t|
     t.string   "title"
