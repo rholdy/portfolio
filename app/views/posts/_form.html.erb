@@ -5,14 +5,19 @@
     <%= f.input :title %>
     <%= f.input :body %>
     <%= f.input :Author %>
+
+      <%= f.simple_fields_for :pictures do |p| %>
+      <h4> Include a Picture in your post </h4>
+      <%= p.input :image %>
+      <%= p.input :title %>
+      <%= p.input :description%>
+      <% end %>
+
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
-
-
-
 
 <% end %>
 
