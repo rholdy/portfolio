@@ -1,0 +1,25 @@
+<div id= "new_post_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">New Post</h4>
+      </div>
+      <div class="modal-body" >
+        <div>
+            <%= simple_form_for(@post) do |f| %>
+            <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :title %>
+            <%= f.input :body %>
+            <%= f.input :Author %>
+          </div>
+        </div>
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+          <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
