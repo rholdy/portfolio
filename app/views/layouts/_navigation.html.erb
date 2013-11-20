@@ -19,6 +19,7 @@
         <li> <p class='navbar-text'> Signed in as <%= current_author.email %></p> </li>
         <li><%= link_to "Sign Out", destroy_author_session_path, method: :delete, class: "btn" %></li>
       <% else %>
+        <li><%= link_to "Sign in with Google", author_omniauth_authorize_path(:google_oauth2), class: "btn" %></li>
         <li><%= link_to "Sign Up", new_author_registration_path, class: "btn" %></li> 
         <li><%= link_to "Sign In", new_author_session_path, class: "btn" %></li>
       <% end %>

@@ -8,7 +8,6 @@ Portfolio::Application.routes.draw do
   #   get 'pictures/new', to: 'posts#new_image', as: :new_image
   #   post 'pictures/new', to: 'posts#create_image', as: :create_image
   # end
-  devise_for :authors
 
   root :to => "static_pages#home"
 
@@ -19,6 +18,8 @@ Portfolio::Application.routes.draw do
   get "posts", to: "posts#show", as: :posts
   get "contact_me", to: 'contact_me#new', as: :contact_me
   post "contact_me", to: 'contact_me#create', as: :contact_me
+
+  devise_for :authors, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   
 
